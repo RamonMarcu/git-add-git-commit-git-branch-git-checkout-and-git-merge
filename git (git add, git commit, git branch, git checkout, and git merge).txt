@@ -1,0 +1,343 @@
+//part 1
+
+Last login: Wed Feb 17 18:51:59 on ttys000
+You have mail.
+
+The default interactive shell is now zsh.
+To update your account to use zsh, please run `chsh -s /bin/zsh`.
+For more details, please visit https://support.apple.com/kb/HT208050.
+Ramon-Marcu:~ user$ cd desktop
+Ramon-Marcu:desktop user$ cd GitVideo
+Ramon-Marcu:GitVideo user$ ls
+Ramon-Marcu:GitVideo user$ git init
+Reinitialized existing Git repository in /Users/user/Desktop/GitVideo/.git/
+Ramon-Marcu:GitVideo user$ ls
+Ramon-Marcu:GitVideo user$ ls -a
+.	..	.git
+Ramon-Marcu:GitVideo user$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+	new file:   index.html
+
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	deleted:    index.html
+
+Ramon-Marcu:GitVideo user$ touch index.html
+Ramon-Marcu:GitVideo user$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+	new file:   index.html
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	.DS_Store
+
+Ramon-Marcu:GitVideo user$ git add index.html
+Ramon-Marcu:GitVideo user$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+	new file:   index.html
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	.DS_Store
+
+Ramon-Marcu:GitVideo user$ git commit -m "create index.html"
+[master (root-commit) 5fcc7e4] create index.html
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 index.html
+Ramon-Marcu:GitVideo user$ git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	.DS_Store
+
+nothing added to commit but untracked files present (use "git add" to track)
+Ramon-Marcu:GitVideo user$ git log
+commit 5fcc7e4537662da98a0bde66176389fd344b5af0 (HEAD -> master)
+Author: Ramon Marcu <ramondotmarcu@gmail.com>
+Date:   Wed Feb 17 19:04:55 2021 +0200
+
+    create index.html
+Ramon-Marcu:GitVideo user$ touch app.js
+Ramon-Marcu:GitVideo user$ touch styles.css
+Ramon-Marcu:GitVideo user$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   index.html
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	.DS_Store
+	app.js
+	styles.css
+
+no changes added to commit (use "git add" and/or "git commit -a")
+Ramon-Marcu:GitVideo user$ git add index.html app.js .DS_Store
+Ramon-Marcu:GitVideo user$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	new file:   .DS_Store
+	new file:   app.js
+	modified:   index.html
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	styles.css
+
+Ramon-Marcu:GitVideo user$ git commit -m "add app logic"
+[master 43542e8] add app logic
+ 3 files changed, 15 insertions(+)
+ create mode 100644 .DS_Store
+ create mode 100644 app.js
+Ramon-Marcu:GitVideo user$ git log
+commit 43542e83b783608ec1daf1de135e1d0d30f36b70 (HEAD -> master)
+Author: Ramon Marcu <ramondotmarcu@gmail.com>
+Date:   Wed Feb 17 19:42:58 2021 +0200
+
+    add app logic
+
+commit 5fcc7e4537662da98a0bde66176389fd344b5af0
+Author: Ramon Marcu <ramondotmarcu@gmail.com>
+Date:   Wed Feb 17 19:04:55 2021 +0200
+
+    create index.html
+Ramon-Marcu:GitVideo user$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   index.html
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+	styles.css
+
+no changes added to commit (use "git add" and/or "git commit -a")
+Ramon-Marcu:GitVideo user$ git add .
+Ramon-Marcu:GitVideo user$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+	modified:   index.html
+	new file:   styles.css
+
+Ramon-Marcu:GitVideo user$ git commit -m "add basic styles"
+[master 97ce3cf] add basic styles
+ 2 files changed, 8 insertions(+)
+ create mode 100644 styles.css
+Ramon-Marcu:GitVideo user$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   styles.css
+
+// part 2
+
+
+Last login: Wed Feb 17 19:57:36 on ttys000
+You have mail.
+
+The default interactive shell is now zsh.
+To update your account to use zsh, please run `chsh -s /bin/zsh`.
+For more details, please visit https://support.apple.com/kb/HT208050.
+Ramon-Marcu:~ user$ cd desktop
+Ramon-Marcu:desktop user$ cd GitVideo
+Ramon-Marcu:GitVideo user$ ls
+app.js		index.html	styles.css
+Ramon-Marcu:GitVideo user$ git status
+On branch master
+nothing to commit, working tree clean
+Ramon-Marcu:GitVideo user$ git log
+commit 72a1334a5b8f95fc0f1c15b3d49a829f6de7fe91 (HEAD -> master)
+Author: Ramon Marcu <ramondotmarcu@gmail.com>
+Date:   Wed Feb 17 19:58:27 2021 +0200
+
+    change bg color on body
+
+commit 97ce3cf87a41ff5d215998c6108b87c54161e7b3
+Author: Ramon Marcu <ramondotmarcu@gmail.com>
+Date:   Wed Feb 17 19:49:12 2021 +0200
+
+    add basic styles
+
+commit 43542e83b783608ec1daf1de135e1d0d30f36b70
+Author: Ramon Marcu <ramondotmarcu@gmail.com>
+Date:   Wed Feb 17 19:42:58 2021 +0200
+
+    add app logic
+
+commit 5fcc7e4537662da98a0bde66176389fd344b5af0
+Author: Ramon Marcu <ramondotmarcu@gmail.com>
+Date:   Wed Feb 17 19:04:55 2021 +0200
+
+    create index.html
+Ramon-Marcu:GitVideo user$ git checkout 97ce3cf87a41ff5d215998c6108b87c54161e7b3
+Note: switching to '97ce3cf87a41ff5d215998c6108b87c54161e7b3'.
+
+You are in 'detached HEAD' state. You can look around, make experimental
+changes and commit them, and you can discard any commits you make in this
+state without impacting any branches by switching back to a branch.
+
+If you want to create a new branch to retain commits you create, you may
+do so (now or later) by using -c with the switch command. Example:
+
+  git switch -c <new-branch-name>
+
+Or undo this operation with:
+
+  git switch -
+
+Turn off this advice by setting config variable advice.detachedHead to false
+
+HEAD is now at 97ce3cf add basic styles
+Ramon-Marcu:GitVideo user$ git checkout 5fcc7e4537662da98a0bde66176389fd344b5af0
+Previous HEAD position was 97ce3cf add basic styles
+HEAD is now at 5fcc7e4 create index.html
+Ramon-Marcu:GitVideo user$ git status
+HEAD detached at 5fcc7e4
+nothing to commit, working tree clean
+Ramon-Marcu:GitVideo user$ 
+
+
+// part 3
+
+
+Last login: Fri Feb 19 16:30:26 on console
+You have mail.
+
+The default interactive shell is now zsh.
+To update your account to use zsh, please run `chsh -s /bin/zsh`.
+For more details, please visit https://support.apple.com/kb/HT208050.
+Ramon-Marcu:~ user$ cd desktop
+Ramon-Marcu:desktop user$ cd GitVideo
+Ramon-Marcu:GitVideo user$ git status
+HEAD detached at 72a1334
+nothing to commit, working tree clean
+1Ramon-Marcu:GitVideo user$ git branch
+* (HEAD detached at 72a1334)
+  master
+Ramon-Marcu:GitVideo user$ git checkout master
+Switched to branch 'master'
+Ramon-Marcu:GitVideo user$ git branch
+* master
+Ramon-Marcu:GitVideo user$ git status
+On branch master
+nothing to commit, working tree clean
+Ramon-Marcu:GitVideo user$ git branch crazycolors
+Ramon-Marcu:GitVideo user$ git branch
+  crazycolors
+* master
+Ramon-Marcu:GitVideo user$ git checkout crazycolors
+Switched to branch 'crazycolors'
+Ramon-Marcu:GitVideo user$ git log
+commit 72a1334a5b8f95fc0f1c15b3d49a829f6de7fe91 (HEAD -> crazycolors, master)
+Author: Ramon Marcu <ramondotmarcu@gmail.com>
+Date:   Wed Feb 17 19:58:27 2021 +0200
+
+    change bg color on body
+
+commit 97ce3cf87a41ff5d215998c6108b87c54161e7b3
+Author: Ramon Marcu <ramondotmarcu@gmail.com>
+Date:   Wed Feb 17 19:49:12 2021 +0200
+
+    add basic styles
+
+commit 43542e83b783608ec1daf1de135e1d0d30f36b70
+Author: Ramon Marcu <ramondotmarcu@gmail.com>
+Date:   Wed Feb 17 19:42:58 2021 +0200
+
+    add app logic
+
+commit 5fcc7e4537662da98a0bde66176389fd344b5af0
+Author: Ramon Marcu <ramondotmarcu@gmail.com>
+Date:   Wed Feb 17 19:04:55 2021 +0200
+
+    create index.html
+Ramon-Marcu:GitVideo user$ git status
+On branch crazycolors
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   index.html
+	modified:   styles.css
+
+no changes added to commit (use "git add" and/or "git commit -a")
+Ramon-Marcu:GitVideo user$ git add .
+Ramon-Marcu:GitVideo user$ git commit -m "add animated bg"
+[crazycolors db218db] add animated bg
+ 2 files changed, 54 insertions(+), 9 deletions(-)
+ rewrite styles.css (88%)
+
+// part 4
+
+Last login: Fri Feb 19 18:51:51 on ttys000
+You have mail.
+
+The default interactive shell is now zsh.
+To update your account to use zsh, please run `chsh -s /bin/zsh`.
+For more details, please visit https://support.apple.com/kb/HT208050.
+Ramon-Marcu:~ user$ cd desktop
+Ramon-Marcu:desktop user$ cd GitVideo
+Ramon-Marcu:GitVideo user$ git status
+On branch master
+nothing to commit, working tree clean
+Ramon-Marcu:GitVideo user$ git branch
+  crazycolors
+* master
+Ramon-Marcu:GitVideo user$ git log
+commit db218dbdba09db6e72ec140ae030b0e469e2b72c (HEAD -> master, crazycolors)
+Author: Ramon Marcu <ramondotmarcu@gmail.com>
+Date:   Fri Feb 19 18:19:46 2021 +0200
+
+    add animated bg
+
+commit 72a1334a5b8f95fc0f1c15b3d49a829f6de7fe91
+Author: Ramon Marcu <ramondotmarcu@gmail.com>
+Date:   Wed Feb 17 19:58:27 2021 +0200
+
+    change bg color on body
+
+commit 97ce3cf87a41ff5d215998c6108b87c54161e7b3
+Author: Ramon Marcu <ramondotmarcu@gmail.com>
+Date:   Wed Feb 17 19:49:12 2021 +0200
+
+    add basic styles
+
+commit 43542e83b783608ec1daf1de135e1d0d30f36b70
+Author: Ramon Marcu <ramondotmarcu@gmail.com>
+Date:   Wed Feb 17 19:42:58 2021 +0200
+
+add app logic
+Ramon-Marcu:GitVideo user$ git merge crazycolors
+Already up to date.
+Ramon-Marcu:GitVideo user$ git merge master
+Already up to date.
+Ramon-Marcu:GitVideo user$ git status
+On branch master
+nothing to commit, working tree clean
+Ramon-Marcu:GitVideo user$ ls
+app.js		index.html	styles.css
+Ramon-Marcu:GitVideo user$ 
+
+
+   
+
